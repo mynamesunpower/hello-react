@@ -1,17 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Ex05_4_ScrollToBottom from "./Ex05_4_ScrollToBottom";
 
-function App() {
-  const name = "리액트";
-  return (
-    <div>
-      <div className="react">{name}</div>
-      <h1>들여쓰기가 이상한</h1>
-      <h2>코드</h2>
-      <p>입니다3...</p>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Ex05_4_ScrollToBottom ref={(ref) => (this.scrollBox = ref)} />
+        <button onClick={() => this.scrollBox.scrollToBottom()}>
+          맨 밑으로
+        </button>
+      </div>
+    );
+  }
 }
 
 export default App;
